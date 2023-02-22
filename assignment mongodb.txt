@@ -1,0 +1,62 @@
+Answer 1
+     MongoDB is a non-relational document database that provides support for JSON-like storage. The MongoDB database has a flexible data model that enables you to store unstructured data, and it provides full indexing support, and replication with rich and intuitive APIs.
+     A non-relational database is a database that does not use the tabular schema of rows and columns found in most traditional database systems. Instead, non-relational databases use a storage model that is optimized for the specific requirements of the type of data being stored.
+
+Answer 2
+   MongoDB provides a powerful query language that supports ad hoc queries, indexing, aggregation, geospatial search, text search, and a lot more. This presents you with a powerful tool kit to access and work with your data. Finally, MongoDB is freely available and has great Python support.
+   
+Answer 3
+  
+   
+Answer 4
+
+import pymongo
+client = pymongo.MongoClient("mongodb+srv://himanshupal675:pwskills@cluster0.1guqgwx.mongodb.net/?retryWrites=true&w=majority")
+db = client.test
+db=client['pwskills']
+data={"name":"himanshu pal",
+      "class":"3rd year",
+      "branch":"computer science"
+     }
+coll_pwskills=db["my_record"]
+coll_pwskills.insert_one(data)
+data1=[{"name":"Sudhanshu pal",
+      "class":"2ndd year",
+      "branch":"B.Pharma"
+     },
+       {"name":"himanshu pal",
+      "class":"3rd year",
+      "branch":"computer science"
+     }]
+coll_pwskills.insert_many(data1)
+for i in coll_pwskills.find():
+    print(i)
+coll_pwskills.find_one():
+  
+  
+Answer 5
+find() method is used to select data from the database. It returns all the occurrences of the information stored in the collection. It has 2 types of parameters, The first parameter of the find() method is a query object. In the below example we will use an empty Query object, which will select all information from the collection. Note: It works the same as SELECT* without any parameter. 
+
+import pymongo
+my_client = pymongo.MongoClient('localhost', 27017)
+mydb = my_client["gfg"]
+mynew = mydb["names"]
+for x in mycol.find():
+	print(x)
+
+
+Answer 6
+In MongoDB, sorting is done by the sort() method. The sort() method consists of two basic building blocks. These building blocks are fields to be sorted and the sort order.
+
+The sorting order in MongoDB is defined by either a one (1) or a minus (-1). Here the positive one represents the ascending order, while the negative one represents the descending order.
+
+example:
+db.collection_name.find().sort({field_name: sort order})
+
+Answer 7
+    The deleteOne() method deletes the first document from the collection that matches the given selection criteria. It will delete/remove a single document from the collection.
+
+    Delete_many() is used when one needs to delete more than one document. A query object containing which document to be deleted is created and is passed as the first parameter to the delete_many().
+Syntax:
+collection.delete_many(filter, collation=None, hint=None, session=None)
+
